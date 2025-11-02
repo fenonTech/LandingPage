@@ -6,7 +6,7 @@ export default function Hero({ onOpenCreateAccount }) {
         {/* Floating card on the left - otimizado mobile */}
         <div className="absolute -left-8 sm:-left-6 md:-left-8 top-[2%] sm:top-1/2 transform -translate-y-1/ -rotate-12 animate-fade-in-left animate-float">
           <img
-            src="../../imgs/cartao.png"
+            src="/imgs/cartao.png"
             alt="Cartão Meu Bolso"
             className="w-28 h-auto sm:w-48 md:w-64 lg:w-84 shadow-2xl rounded-2xl hover-lift smooth-transition opacity-80 sm:opacity-100"
           />
