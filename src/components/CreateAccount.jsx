@@ -37,25 +37,27 @@ function CreateAccount({ isVisible, onClose, onSwitchToLogin }) {
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    
+
     // Formatação automática para data de nascimento
     if (name === "dataNascimento") {
       let formattedValue = value.replace(/\D/g, ""); // Remove tudo que não é número
-      
+
       if (formattedValue.length >= 2) {
-        formattedValue = formattedValue.slice(0, 2) + "/" + formattedValue.slice(2);
+        formattedValue =
+          formattedValue.slice(0, 2) + "/" + formattedValue.slice(2);
       }
       if (formattedValue.length >= 5) {
-        formattedValue = formattedValue.slice(0, 5) + "/" + formattedValue.slice(5, 9);
+        formattedValue =
+          formattedValue.slice(0, 5) + "/" + formattedValue.slice(5, 9);
       }
-      
+
       setFormData((prev) => ({
         ...prev,
         [name]: formattedValue,
       }));
       return;
     }
-    
+
     setFormData((prev) => ({
       ...prev,
       [name]: value,
@@ -196,27 +198,42 @@ function CreateAccount({ isVisible, onClose, onSwitchToLogin }) {
                 >
                   {formData.banco ? (
                     <div className="flex items-center gap-2">
-                      <div 
+                      <div
                         className="w-5 h-5 rounded-full flex items-center justify-center text-white text-xs font-bold"
-                        style={{ backgroundColor: bancos.find(b => b.id === formData.banco)?.cor }}
+                        style={{
+                          backgroundColor: bancos.find(
+                            (b) => b.id === formData.banco
+                          )?.cor,
+                        }}
                       >
-                        {bancos.find(b => b.id === formData.banco)?.nome.charAt(0)}
+                        {bancos
+                          .find((b) => b.id === formData.banco)
+                          ?.nome.charAt(0)}
                       </div>
-                      <span className="text-gray-300">{bancos.find(b => b.id === formData.banco)?.nome}</span>
+                      <span className="text-gray-300">
+                        {bancos.find((b) => b.id === formData.banco)?.nome}
+                      </span>
                     </div>
                   ) : (
                     <span className="text-gray-500">Selecione um banco</span>
                   )}
-                  <svg 
-                    className={`w-4 h-4 text-gray-500 transition-transform ${showBankDropdown ? 'rotate-180' : ''}`}
-                    fill="none" 
-                    stroke="currentColor" 
+                  <svg
+                    className={`w-4 h-4 text-gray-500 transition-transform ${
+                      showBankDropdown ? "rotate-180" : ""
+                    }`}
+                    fill="none"
+                    stroke="currentColor"
                     viewBox="0 0 24 24"
                   >
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M19 9l-7 7-7-7"
+                    />
                   </svg>
                 </button>
-                
+
                 {showBankDropdown && (
                   <div className="absolute z-10 w-full mt-1 bg-gray-900 border border-gray-800 rounded-lg shadow-xl max-h-60 overflow-y-auto">
                     {bancos.map((banco) => (
@@ -224,12 +241,12 @@ function CreateAccount({ isVisible, onClose, onSwitchToLogin }) {
                         key={banco.id}
                         type="button"
                         onClick={() => {
-                          setFormData(prev => ({ ...prev, banco: banco.id }));
+                          setFormData((prev) => ({ ...prev, banco: banco.id }));
                           setShowBankDropdown(false);
                         }}
                         className="w-full px-3 py-2 text-left hover:bg-gray-800 transition-colors flex items-center gap-2 text-sm"
                       >
-                        <div 
+                        <div
                           className="w-5 h-5 rounded-full flex items-center justify-center text-white text-xs font-bold flex-shrink-0"
                           style={{ backgroundColor: banco.cor }}
                         >
