@@ -1,6 +1,11 @@
 import { useState } from "react";
 
-function Login({ isVisible, onClose, onSwitchToCreateAccount, onSwitchToForgotPassword }) {
+function Login({
+  isVisible,
+  onClose,
+  onSwitchToCreateAccount,
+  onSwitchToForgotPassword,
+}) {
   const [formData, setFormData] = useState({
     email: "",
     senha: "",

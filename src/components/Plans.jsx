@@ -12,7 +12,7 @@ export default function Plans() {
 
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [hoveredCard, setHoveredCard] = useState(null);
-  const [selectedPeriod, setSelectedPeriod] = useState("mensal");
+  const [selectedPeriod, setSelectedPeriod] = useState("anual");
 
   const pricing = {
     mensal: {

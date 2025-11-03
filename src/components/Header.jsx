@@ -1,9 +1,19 @@
 export default function Header({ onOpenCreateAccount, onOpenLogin }) {
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
   return (
     <header className="bg-black sticky top-0 z-50 border-b border-dark-700">
       <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 sm:h-20">
-          <div className="flex items-center">
+          <button
+            onClick={scrollToTop}
+            className="flex items-center cursor-pointer hover:opacity-80 transition-opacity active:scale-95"
+          >
             <img
               src="/imgs/logoHeader.png"
               alt="MEU BOLSO"
@@ -12,7 +22,7 @@ export default function Header({ onOpenCreateAccount, onOpenLogin }) {
             <span className="ml-2 sm:ml-3 text-yellow-400 text-base sm:text-xl font-bold">
               MEU BOLSO
             </span>
-          </div>
+          </button>
 
           <div className="hidden md:block">
             <nav className="flex items-center space-x-8">
