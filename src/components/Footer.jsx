@@ -32,10 +32,10 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="#openfinance"
+                  href="#dashboard"
                   className="text-gray-400 hover:text-white transition-colors text-sm active:text-yellow-400"
                 >
-                  Open Finance
+                  Dashboard
                 </a>
               </li>
               <li>
