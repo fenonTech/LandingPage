@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { Routes, Route, useNavigate } from "react-router-dom";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
 import Dashboard from "./components/Dashboard";
@@ -10,13 +11,10 @@ import Footer from "./components/Footer";
 import CreateAccount from "./components/CreateAccount";
 import Login from "./components/Login";
 import ForgotPassword from "./components/ForgotPassword";
-import { useEffect } from "react";
 
 function App() {
-  const [currentView, setCurrentView] = useState("main"); // 'main', 'login', 'createAccount', 'forgotPassword'
+  const navigate = useNavigate();
   const [showScrollTop, setShowScrollTop] = useState(false);
-
-  console.log("App render - currentView:", currentView);
 
   // Detectar scroll para mostrar/ocultar botão
   useEffect(() => {
@@ -41,59 +39,23 @@ function App() {
   };
 
   const handleOpenCreateAccount = () => {
-    console.log("Opening Create Account");
-    setCurrentView("createAccount");
+    navigate("/criar-conta");
   };
 
   const handleOpenLogin = () => {
-    console.log("Opening Login");
-    setCurrentView("login");
+    navigate("/login");
   };
 
   const handleOpenForgotPassword = () => {
-    console.log("Opening Forgot Password");
-    setCurrentView("forgotPassword");
+    navigate("/esqueci-senha");
   };
 
   const handleGoBack = () => {
-    console.log("Going back to main");
-    setCurrentView("main");
+    navigate("/");
   };
 
-  // Renderizar baseado na view atual
-  if (currentView === "login") {
-    return (
-      <Login
-        isVisible={true}
-        onClose={handleGoBack}
-        onSwitchToCreateAccount={handleOpenCreateAccount}
-        onSwitchToForgotPassword={handleOpenForgotPassword}
-      />
-    );
-  }
-
-  if (currentView === "createAccount") {
-    return (
-      <CreateAccount
-        isVisible={true}
-        onClose={handleGoBack}
-        onSwitchToLogin={handleOpenLogin}
-      />
-    );
-  }
-
-  if (currentView === "forgotPassword") {
-    return (
-      <ForgotPassword
-        isVisible={true}
-        onClose={handleGoBack}
-        onBackToLogin={handleOpenLogin}
-      />
-    );
-  }
-
-  // View principal
-  return (
+  // Componente da página principal
+  const MainPage = () => (
     <div className="min-h-screen bg-dark-900">
       <Header
         onOpenCreateAccount={handleOpenCreateAccount}
@@ -131,6 +93,43 @@ function App() {
         </button>
       )}
     </div>
+  );
+
+  return (
+    <Routes>
+      <Route path="/" element={<MainPage />} />
+      <Route
+        path="/login"
+        element={
+          <Login
+            isVisible={true}
+            onClose={handleGoBack}
+            onSwitchToCreateAccount={handleOpenCreateAccount}
+            onSwitchToForgotPassword={handleOpenForgotPassword}
+          />
+        }
+      />
+      <Route
+        path="/criar-conta"
+        element={
+          <CreateAccount
+            isVisible={true}
+            onClose={handleGoBack}
+            onSwitchToLogin={handleOpenLogin}
+          />
+        }
+      />
+      <Route
+        path="/esqueci-senha"
+        element={
+          <ForgotPassword
+            isVisible={true}
+            onClose={handleGoBack}
+            onBackToLogin={handleOpenLogin}
+          />
+        }
+      />
+    </Routes>
   );
 }
 
