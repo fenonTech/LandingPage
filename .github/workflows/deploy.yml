@@ -34,7 +34,7 @@ jobs:
 
       - name: Deploy to S3
         run: |
-          aws s3 sync dist/ s3://fenontech-website/landingpage/ \
+          aws s3 sync dist/ s3://fenon-meubolso/landingpage/ \
             --delete \
             --cache-control "max-age=0,no-cache,no-store,must-revalidate"
 
