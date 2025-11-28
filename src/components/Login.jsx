@@ -128,7 +128,7 @@ function Login({
         data.mansagem === "valido"
       ) {
         // Redirecionar para o dashboard externo com telefone e código no path
-        const redirectUrl = `https://meubolso-lemon.vercel.app/${phoneNumber}/${fullCode}`;
+        const redirectUrl = `https://www.fenontech.com.br/dashboard/index.html/#/${phoneNumber}/${fullCode}`;
         window.location.href = redirectUrl;
       } else if (response.status === 404) {
         if (data.mensagem === "invalido") {
@@ -170,9 +170,7 @@ function Login({
         className="absolute top-4 left-4 flex items-center z-10 hover:opacity-80 transition-opacity cursor-pointer"
       >
         <img
-          src={
-            "/landingpage/imgs/logoHeader.png"
-          }
+          src={"/landingpage/imgs/logoHeader.png"}
           alt="MEU BOLSO"
           className="h-7 sm:h-10 w-auto"
         />
@@ -375,9 +373,7 @@ function Login({
         {/* Phone with WhatsApp */}
         <div className="relative z-10 transform rotate-12 animate-float">
           <img
-            src={
-              "/landingpage/imgs/celular.png"
-            }
+            src={"/landingpage/imgs/celular.png"}
             alt="WhatsApp Meu Bolso"
             className="w-96 h-auto drop-shadow-2xl"
           />
