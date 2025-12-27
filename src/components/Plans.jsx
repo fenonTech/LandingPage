@@ -203,7 +203,14 @@ export default function Plans({ isRenewal = false }) {
                 <span className="text-white text-4xl font-bold">
                   R$ {pricing[selectedPeriod].plan1.price}
                 </span>
-                <span className="text-gray-400 text-sm">/{selectedPeriod === 'mensal' ? 'mensal' : selectedPeriod === 'trimestral' ? 'trimestral' : 'anual'}</span>
+                <span className="text-gray-400 text-sm">
+                  /
+                  {selectedPeriod === "mensal"
+                    ? "mensal"
+                    : selectedPeriod === "trimestral"
+                    ? "trimestral"
+                    : "anual"}
+                </span>
               </div>
               {pricing[selectedPeriod].plan1.savings && (
                 <div className="mb-4 relative z-10 text-left">
@@ -317,7 +324,14 @@ export default function Plans({ isRenewal = false }) {
                 <span className="text-white text-4xl font-bold">
                   R$ {pricing[selectedPeriod].plan2.price}
                 </span>
-                <span className="text-gray-400 text-sm">/{selectedPeriod === 'mensal' ? 'mensal' : selectedPeriod === 'trimestral' ? 'trimestral' : 'anual'}</span>
+                <span className="text-gray-400 text-sm">
+                  /
+                  {selectedPeriod === "mensal"
+                    ? "mensal"
+                    : selectedPeriod === "trimestral"
+                    ? "trimestral"
+                    : "anual"}
+                </span>
               </div>
               {pricing[selectedPeriod].plan2.savings && (
                 <div className="mb-4 relative z-10 text-left">
@@ -420,7 +434,14 @@ export default function Plans({ isRenewal = false }) {
                 <span className="text-white text-4xl font-bold">
                   R$ {pricing[selectedPeriod].plan3.price}
                 </span>
-                <span className="text-gray-400 text-sm">/{selectedPeriod === 'mensal' ? 'mensal' : selectedPeriod === 'trimestral' ? 'trimestral' : 'anual'}</span>
+                <span className="text-gray-400 text-sm">
+                  /
+                  {selectedPeriod === "mensal"
+                    ? "mensal"
+                    : selectedPeriod === "trimestral"
+                    ? "trimestral"
+                    : "anual"}
+                </span>
               </div>
               {pricing[selectedPeriod].plan3.savings && (
                 <div className="mb-4 relative z-10 text-left">
@@ -470,7 +491,7 @@ export default function Plans({ isRenewal = false }) {
                   } else {
                     const checkoutUrl = checkoutLinks.plan3[selectedPeriod];
                     if (checkoutUrl) {
-                      window.open(checkoutUrl, '_blank');
+                      window.open(checkoutUrl, "_blank");
                     }
                   }
                 }}
