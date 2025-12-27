@@ -1,4 +1,9 @@
-export default function Header({ onOpenCreateAccount, onOpenLogin }) {
+import React from "react";
+import ReactDOM from "react-dom/client";
+import Plans from "./components/Plans.jsx";
+import "./index.css";
+
+function SimpleHeader() {
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
@@ -24,41 +29,11 @@ export default function Header({ onOpenCreateAccount, onOpenLogin }) {
             </span>
           </button>
 
-          <div className="hidden md:block">
-            <nav className="flex items-center space-x-8">
-              <a
-                href="#dashboard"
-                className="text-white hover:text-yellow-400 transition-colors font-medium"
-              >
-                Dashboard
-              </a>
-              <a
-                href="#whatsapp"
-                className="text-white hover:text-yellow-400 transition-colors font-medium"
-              >
-                WhatsApp
-              </a>
-
-              <a
-                href="#plans"
-                className="text-white hover:text-yellow-400 transition-colors font-medium"
-              >
-                Planos e Preços
-              </a>
-              <a
-                href="#faq"
-                className="text-white hover:text-yellow-400 transition-colors font-medium"
-              >
-                FAQ
-              </a>
-            </nav>
-          </div>
-
           <div className="flex items-center space-x-2 sm:space-x-4">
-            <button
-              onClick={onOpenLogin}
-              className="bg-yellow-400 hover:bg-yellow-300 text-black px-4 sm:px-6 py-2 rounded-lg font-bold transition-colors inline-flex items-center text-sm sm:text-base active:scale-95 shadow-lg hover:shadow-xl"
-            >
+            <button className="text-white hover:text-yellow-400 transition-colors font-medium text-sm sm:text-base active:scale-95">
+              Criar conta
+            </button>
+            <button className="bg-yellow-400 hover:bg-yellow-300 text-black px-4 sm:px-6 py-2 rounded-lg font-bold transition-colors inline-flex items-center text-sm sm:text-base active:scale-95 shadow-lg hover:shadow-xl">
               <svg
                 className="w-4 h-4 mr-1 sm:mr-2"
                 fill="currentColor"
@@ -78,3 +53,18 @@ export default function Header({ onOpenCreateAccount, onOpenLogin }) {
     </header>
   );
 }
+
+function RenewalPage() {
+  return (
+    <>
+      <SimpleHeader />
+      <Plans isRenewal={true} />
+    </>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById("root")).render(
+  <React.StrictMode>
+    <RenewalPage />
+  </React.StrictMode>
+);

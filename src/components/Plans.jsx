@@ -4,7 +4,7 @@ import {
 } from "../hooks/useScrollAnimation";
 import { useState } from "react";
 
-export default function Plans() {
+export default function Plans({ isRenewal = false }) {
   const [sectionRef, isVisible] = useScrollAnimation(0.2);
   const [plan1Ref, plan1Visible] = useStaggeredAnimation(100);
   const [plan2Ref, plan2Visible] = useStaggeredAnimation(200);
@@ -60,7 +60,7 @@ export default function Plans() {
               isVisible ? "animate-scale-in" : "opacity-0 transform scale-75"
             }`}
           >
-            Planos e Preços
+            {isRenewal ? "Renovar Plano" : "Planos e Preços"}
           </div>
 
           {/* Main heading */}
@@ -71,9 +71,18 @@ export default function Plans() {
                 : "opacity-0 transform translate-y-8"
             }`}
           >
-            Seu futuro começa <br className="sm:hidden" />
-            com <br className="hidden sm:inline" />
-            <span className="text-yellow-400">Plano Meu bolso</span>
+            {isRenewal ? (
+              <>
+                Renove seu <br className="sm:hidden" />
+                <span className="text-yellow-400">Plano Meu bolso</span>
+              </>
+            ) : (
+              <>
+                Seu futuro começa <br className="sm:hidden" />
+                com <br className="hidden sm:inline" />
+                <span className="text-yellow-400">Plano Meu bolso</span>
+              </>
+            )}
           </h1>
 
           {/* Subtitle */}
@@ -84,8 +93,9 @@ export default function Plans() {
                 : "opacity-0 transform translate-y-8"
             }`}
           >
-            Selecione o plano ideal para organizar tudo que entra e sai do seu
-            bolso
+            {isRenewal
+              ? "Continue aproveitando todos os benefícios ou faça upgrade do seu plano"
+              : "Selecione o plano ideal para organizar tudo que entra e sai do seu bolso"}
           </p>
 
           {/* Period Selector */}
@@ -228,8 +238,13 @@ export default function Plans() {
                 </li>
               </ul>
 
-              <button className="w-full bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-bold py-3 px-6 rounded-lg transition-all duration-300 active:scale-95 shadow-lg relative z-10">
-                Assinar Essencial
+              <button
+                className="w-full bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-bold py-3 px-6 rounded-lg transition-all duration-300 active:scale-95 shadow-lg relative z-10"
+                onClick={() =>
+                  isRenewal ? (window.location.hash = "/planos") : null
+                }
+              >
+                {isRenewal ? "Renovar Essencial" : "Assinar Essencial"}
               </button>
             </div>
 
@@ -327,8 +342,13 @@ export default function Plans() {
                 </li>
               </ul>
 
-              <button className="w-full bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-bold py-3 px-6 rounded-lg transition-all duration-300 active:scale-95 shadow-lg relative z-10">
-                Assinar Inteligente
+              <button
+                className="w-full bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-bold py-3 px-6 rounded-lg transition-all duration-300 active:scale-95 shadow-lg relative z-10"
+                onClick={() =>
+                  isRenewal ? (window.location.hash = "/planos") : null
+                }
+              >
+                {isRenewal ? "Renovar Inteligente" : "Assinar Inteligente"}
               </button>
             </div>
 
@@ -414,8 +434,13 @@ export default function Plans() {
                   Budget mensal
                 </li>
               </ul>
-              <button className="w-full bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-bold py-3 px-6 rounded-lg transition-all duration-300 active:scale-95 shadow-lg relative z-10">
-                Assinar Visionário
+              <button
+                className="w-full bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-bold py-3 px-6 rounded-lg transition-all duration-300 active:scale-95 shadow-lg relative z-10"
+                onClick={() =>
+                  isRenewal ? (window.location.hash = "/planos") : null
+                }
+              >
+                {isRenewal ? "Renovar Visionário" : "Assinar Visionário"}
               </button>
             </div>
           </div>
