@@ -147,7 +147,7 @@ export default function FAQ() {
               </h2>
 
               <button
-                onClick={() => window.location.hash = '/planos'}
+                onClick={() => (window.location.hash = "/planos")}
                 className="gradient-button text-white px-8 sm:px-10 py-4 rounded-full font-bold text-base sm:text-lg smooth-transition hover-lift inline-flex items-center animate-pulse-slow active:scale-95 shadow-2xl w-full sm:w-auto justify-center"
               >
                 <img
