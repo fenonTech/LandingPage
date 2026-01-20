@@ -26,9 +26,9 @@ export default function Hero({ onOpenCreateAccount }) {
       setShowError(true);
       return;
     }
-    
+
     const phoneNumber = "+55" + telefone.replace(/\D/g, "");
-    
+
     try {
       const response = await fetch("/api/auth/cadastrar", {
         method: "POST",
@@ -66,14 +66,15 @@ export default function Hero({ onOpenCreateAccount }) {
               <h3 className="text-2xl font-bold text-white mb-3">
                 Tudo certo com o seu cadastro!
               </h3>
-              <p className="text-gray-300 mb-6">
-                Continue pelo WhatsApp
-              </p>
+              <p className="text-gray-300 mb-6">Continue pelo WhatsApp</p>
             </div>
             <button
               onClick={() => {
                 setShowSuccessModal(false);
-                window.open("https://wa.me/5511918682080?text=Olá,%20acabei%20de%20me%20cadastrar!", "_blank");
+                window.open(
+                  "https://wa.me/5511918682080?text=Olá,%20acabei%20de%20me%20cadastrar!",
+                  "_blank",
+                );
               }}
               className="bg-green-500 hover:bg-green-600 text-white px-8 py-3 rounded-full font-bold text-base smooth-transition w-full mb-3"
             >
@@ -90,141 +91,143 @@ export default function Hero({ onOpenCreateAccount }) {
       )}
 
       <section className="bg-black min-h-screen relative overflow-hidden">
-      {/* Background elements */}
-      <div className=" inset-0 pointer-events-none">
-        {/* Floating card on the left - otimizado mobile */}
-        <div className="absolute -left-8 sm:-left-6 md:-left-8 top-[2%] sm:top-1/2 transform -translate-y-1/ -rotate-12 animate-fade-in-left animate-float">
-          <img
-            src={"/landingpage/imgs/cartao.png"}
-            alt="Cartão Meu Bolso"
-            className="w-28 h-auto sm:w-48 md:w-64 lg:w-84 shadow-2xl rounded-2xl hover-lift smooth-transition opacity-80 sm:opacity-100"
-          />
-        </div>
-      </div>
-
-      {/* Floating safe/vault on the right - otimizado mobile */}
-      <div className="absolute -right-2 sm:-right-4 md:-right-10 bottom-[20%] sm:bottom-12 md:bottom-16 z-10 animate-fade-in-right animate-pulse-slow pointer-events-none">
-        <div className="relative">
-          <img
-            src={"/landingpage/imgs/cofrepng.png"}
-            alt="Cofre"
-            className="w-24 h-auto sm:w-48 md:w-64 md:h-70 lg:w-84 lg:h-84 hover-lift smooth-transition opacity-80 sm:opacity-100"
-          />
-        </div>
-      </div>
-
-      <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 relative z-10">
-        <div className="flex flex-col items-center justify-start sm:justify-center min-h-screen text-center pt-32 pb-4 sm:pt-0 sm:pb-20">
-          {/* Main heading - otimizado mobile */}
-          <h1
-            className="text-[2rem] leading-tight sm:text-4xl md:text-5xl lg:text-7xl font-bold text-white mb-5 sm:mb-6 max-w-4xl animate-fade-in-up px-2"
-            style={{ animationDelay: "0.2s" }}
-          >
-            Seu assistente de IA
-            <br />
-            <span className="text-yellow-400">Pessoal de Finanças</span>
-          </h1>
-
-          {/* Subtitle - otimizado mobile */}
-          <p
-            className="text-sm leading-relaxed sm:text-lg lg:text-xl text-gray-300 mb-8 sm:mb-12 max-w-3xl animate-fade-in-up px-4"
-            style={{ animationDelay: "0.4s" }}
-          >
-            Com o Meu Bolso você entende, acompanha e planeja seu dinheiro de
-            forma simples, sem planilhas. Tenha mais controle, clareza e
-            tranquilidade sobre suas finanças
-          </p>
-
-          {/* Social icons - otimizado mobile */}
-          <div
-            className="flex items-center gap-6 sm:gap-8 mb-8 sm:mb-12 animate-fade-in-up"
-            style={{ animationDelay: "0.6s" }}
-          >
-            <a
-              href="https://www.instagram.com/meubolsoia/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center text-pink-500 hover:text-pink-400 smooth-transition hover-lift active:scale-95"
-            >
-              <img
-                src={"/landingpage/imgs/instagram.png"}
-                alt="Instagram"
-                className="w-5 h-5 sm:w-6 sm:h-6 mr-2"
-              />
-              <span className="font-medium text-sm sm:text-base">
-                Instagram
-              </span>
-            </a>
-            <a
-              href="https://wa.me/5511918682080?text=Quanto%20gastei%20hoje?"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center text-green-500 hover:text-green-400 smooth-transition hover-lift active:scale-95"
-            >
-              <img
-                src={"/landingpage/imgs/whatsapp.png"}
-                alt="WhatsApp"
-                className="w-5 h-5 sm:w-6 sm:h-6 mr-2"
-              />
-              <span className="font-medium text-sm sm:text-base">WhatsApp</span>
-            </a>
+        {/* Background elements */}
+        <div className=" inset-0 pointer-events-none">
+          {/* Floating card on the left - otimizado mobile */}
+          <div className="absolute -left-8 sm:-left-6 md:-left-8 top-[2%] sm:top-1/2 transform -translate-y-1/ -rotate-12 animate-fade-in-left animate-float">
+            <img
+              src={"/landingpage/imgs/cartao.png"}
+              alt="Cartão Meu Bolso"
+              className="w-28 h-auto sm:w-48 md:w-64 lg:w-84 shadow-2xl rounded-2xl hover-lift smooth-transition opacity-80 sm:opacity-100"
+            />
           </div>
+        </div>
 
-          {/* Trial Section - otimizado mobile */}
-          <div
-            className="w-full max-w-3xl mb-4 sm:mb-6 animate-fade-in-up px-4"
-            style={{ animationDelay: "0.7s" }}
-          >
-            <h3 className="text-2xl sm:text-3xl font-bold text-white mb-6 text-center">
-              Resgate seu período de teste
-            </h3>
-            <div className="flex flex-col gap-3 items-center">
-              <div className="w-full sm:w-auto flex flex-col gap-3">
-                <div className="flex flex-col sm:flex-row gap-3">
-                  <input
-                    type="tel"
-                    value={telefone}
-                    onChange={handlePhoneChange}
-                    placeholder="(00) 00000-0000"
-                    maxLength="15"
-                    className={`w-full sm:w-[300px] bg-gray-900 border ${
-                      showError ? "border-red-500" : "border-gray-800"
-                    } rounded-full px-4 py-2 text-sm text-gray-300 placeholder-gray-500 focus:outline-none focus:border-yellow-400 transition-colors autofill:bg-gray-900`}
-                  />
-                  <button
-                    onClick={handleTrialClick}
-                    className="gradient-button text-white px-6 py-2.5 rounded-full font-bold text-sm sm:text-base smooth-transition hover-lift active:scale-95 shadow-2xl whitespace-nowrap"
-                  >
-                    Resgatar
-                  </button>
+        {/* Floating safe/vault on the right - otimizado mobile */}
+        <div className="absolute -right-2 sm:-right-4 md:-right-10 bottom-[20%] sm:bottom-12 md:bottom-16 z-10 animate-fade-in-right animate-pulse-slow pointer-events-none">
+          <div className="relative">
+            <img
+              src={"/landingpage/imgs/cofrepng.png"}
+              alt="Cofre"
+              className="w-24 h-auto sm:w-48 md:w-64 md:h-70 lg:w-84 lg:h-84 hover-lift smooth-transition opacity-80 sm:opacity-100"
+            />
+          </div>
+        </div>
+
+        <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 relative z-10">
+          <div className="flex flex-col items-center justify-start sm:justify-center min-h-screen text-center pt-32 pb-4 sm:pt-0 sm:pb-20">
+            {/* Main heading - otimizado mobile */}
+            <h1
+              className="text-[2rem] leading-tight sm:text-4xl md:text-5xl lg:text-7xl font-bold text-white mb-5 sm:mb-6 max-w-4xl animate-fade-in-up px-2"
+              style={{ animationDelay: "0.2s" }}
+            >
+              Seu assistente de IA
+              <br />
+              <span className="text-yellow-400">Pessoal de Finanças</span>
+            </h1>
+
+            {/* Subtitle - otimizado mobile */}
+            <p
+              className="text-sm leading-relaxed sm:text-lg lg:text-xl text-gray-300 mb-8 sm:mb-12 max-w-3xl animate-fade-in-up px-4"
+              style={{ animationDelay: "0.4s" }}
+            >
+              Com o Meu Bolso você entende, acompanha e planeja seu dinheiro de
+              forma simples, sem planilhas. Tenha mais controle, clareza e
+              tranquilidade sobre suas finanças
+            </p>
+
+            {/* Social icons - otimizado mobile */}
+            <div
+              className="flex items-center gap-6 sm:gap-8 mb-8 sm:mb-12 animate-fade-in-up"
+              style={{ animationDelay: "0.6s" }}
+            >
+              <a
+                href="https://www.instagram.com/meubolsoia/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center text-pink-500 hover:text-pink-400 smooth-transition hover-lift active:scale-95"
+              >
+                <img
+                  src={"/landingpage/imgs/instagram.png"}
+                  alt="Instagram"
+                  className="w-5 h-5 sm:w-6 sm:h-6 mr-2"
+                />
+                <span className="font-medium text-sm sm:text-base">
+                  Instagram
+                </span>
+              </a>
+              <a
+                href="https://wa.me/5511918682080?text=Quanto%20gastei%20hoje?"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center text-green-500 hover:text-green-400 smooth-transition hover-lift active:scale-95"
+              >
+                <img
+                  src={"/landingpage/imgs/whatsapp.png"}
+                  alt="WhatsApp"
+                  className="w-5 h-5 sm:w-6 sm:h-6 mr-2"
+                />
+                <span className="font-medium text-sm sm:text-base">
+                  WhatsApp
+                </span>
+              </a>
+            </div>
+
+            {/* Trial Section - otimizado mobile */}
+            <div
+              className="w-full max-w-3xl mb-4 sm:mb-6 animate-fade-in-up px-4"
+              style={{ animationDelay: "0.7s" }}
+            >
+              <h3 className="text-2xl sm:text-3xl font-bold text-white mb-6 text-center">
+                Resgate seu período de teste
+              </h3>
+              <div className="flex flex-col gap-3 items-center">
+                <div className="w-full sm:w-auto flex flex-col gap-3">
+                  <div className="flex flex-col sm:flex-row gap-3">
+                    <input
+                      type="tel"
+                      value={telefone}
+                      onChange={handlePhoneChange}
+                      placeholder="(00) 00000-0000"
+                      maxLength="15"
+                      className={`w-full sm:w-[300px] bg-gray-900 border ${
+                        showError ? "border-red-500" : "border-gray-800"
+                      } rounded-full px-4 py-2 text-sm text-gray-300 placeholder-gray-500 focus:outline-none focus:border-yellow-400 transition-colors autofill:bg-gray-900`}
+                    />
+                    <button
+                      onClick={handleTrialClick}
+                      className="gradient-button text-white px-6 py-2.5 rounded-full font-bold text-sm sm:text-base smooth-transition hover-lift active:scale-95 shadow-2xl whitespace-nowrap"
+                    >
+                      Resgatar
+                    </button>
+                  </div>
+                  {showError && (
+                    <p className="text-red-500 text-sm text-center animate-fade-in-up">
+                      Por favor, insira um número de telefone válido
+                    </p>
+                  )}
                 </div>
-                {showError && (
-                  <p className="text-red-500 text-sm text-center animate-fade-in-up">
-                    Por favor, insira um número de telefone válido
-                  </p>
-                )}
               </div>
             </div>
-          </div>
 
-          {/* CTA Buttons - otimizado mobile */}
-          <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 w-full sm:w-auto justify-center items-center">
-            <button
-              onClick={() => (window.location.hash = "/planos")}
-              className="bg-yellow-400 hover:bg-yellow-300 text-black px-8 sm:px-10 py-4 rounded-full font-bold text-base sm:text-lg smooth-transition hover-lift inline-flex items-center active:scale-95 shadow-lg hover:shadow-xl justify-center"
-              style={{ animationDelay: "0.8s" }}
-            >
-              <img
-                src={"/landingpage/imgs/relogio.png"}
-                alt="Relógio"
-                className="w-5 h-5 sm:w-6 sm:h-6 mr-2 flex-shrink-0 brightness-0"
-              />
-              <span>Escolha seu plano</span>
-            </button>
+            {/* CTA Buttons - otimizado mobile */}
+            <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 w-full sm:w-auto justify-center items-center">
+              <button
+                onClick={() => (window.location.hash = "/planos")}
+                className="bg-yellow-400 hover:bg-yellow-300 text-black px-8 sm:px-10 py-4 rounded-full font-bold text-base sm:text-lg smooth-transition hover-lift inline-flex items-center active:scale-95 shadow-lg hover:shadow-xl justify-center"
+                style={{ animationDelay: "0.8s" }}
+              >
+                <img
+                  src={"/landingpage/imgs/relogio.png"}
+                  alt="Relógio"
+                  className="w-5 h-5 sm:w-6 sm:h-6 mr-2 flex-shrink-0 brightness-0"
+                />
+                <span>Escolha seu plano</span>
+              </button>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
     </>
   );
 }
