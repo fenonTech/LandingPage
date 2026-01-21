@@ -8,15 +8,15 @@ export default function Hero({ onOpenCreateAccount }) {
   const handlePhoneChange = (e) => {
     // Extrai apenas números do valor digitado
     const nums = e.target.value.replace(/\D/g, "");
-    
+
     // Limita a 11 dígitos
     const limited = nums.substring(0, 11);
-    
+
     // Formata conforme o tamanho
-    let formatted = '';
-    
+    let formatted = "";
+
     if (limited.length === 0) {
-      formatted = '';
+      formatted = "";
     } else if (limited.length <= 2) {
       formatted = `(${limited}`;
     } else if (limited.length <= 7) {
