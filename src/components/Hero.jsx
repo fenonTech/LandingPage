@@ -6,24 +6,27 @@ export default function Hero({ onOpenCreateAccount }) {
   const [showSuccessModal, setShowSuccessModal] = useState(false);
 
   const handlePhoneChange = (e) => {
-    let value = e.target.value.replace(/\D/g, ""); // Remove tudo que não é número
-
+    // Extrai apenas números do valor digitado
+    const nums = e.target.value.replace(/\D/g, "");
+    
     // Limita a 11 dígitos
-    value = value.slice(0, 11);
-
-    // Aplica a máscara
-    if (value.length > 10) {
-      value = `(${value.slice(0, 2)}) ${value.slice(2, 7)}-${value.slice(7, 11)}`;
-    } else if (value.length > 6) {
-      value = `(${value.slice(0, 2)}) ${value.slice(2, 7)}-${value.slice(7)}`;
-    } else if (value.length > 2) {
-      value = `(${value.slice(0, 2)}) ${value.slice(2)}`;
-    } else if (value.length > 0) {
-      value = `(${value}`;
+    const limited = nums.substring(0, 11);
+    
+    // Formata conforme o tamanho
+    let formatted = '';
+    
+    if (limited.length === 0) {
+      formatted = '';
+    } else if (limited.length <= 2) {
+      formatted = `(${limited}`;
+    } else if (limited.length <= 7) {
+      formatted = `(${limited.substring(0, 2)}) ${limited.substring(2)}`;
+    } else {
+      formatted = `(${limited.substring(0, 2)}) ${limited.substring(2, 7)}-${limited.substring(7)}`;
     }
 
-    setTelefone(value);
-    if (showError && value) {
+    setTelefone(formatted);
+    if (showError && formatted) {
       setShowError(false);
     }
   };
