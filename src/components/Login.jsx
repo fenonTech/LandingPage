@@ -130,7 +130,7 @@ function Login({
         data.mansagem === "valido"
       ) {
         // Redirecionar para o dashboard externo com telefone e código como query parameters
-        const redirectUrl = `https://www.fenontech.com.br/dashboard/index.html?telefone=${encodeURIComponent(
+        const redirectUrl = `https://www.meubolsoia.com.br/dashboard/index.html?telefone=${encodeURIComponent(
           phoneNumber,
         )}&codigo=${encodeURIComponent(fullCode)}`;
 
