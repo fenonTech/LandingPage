@@ -61,7 +61,7 @@ export default function FAQ() {
           {/* Main heading */}
           <div className="text-center mb-10 sm:mb-12">
             <h1
-              className={`text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 leading-tight transition-all duration-1000 delay-100 px-4 ${
+              className={`text-[1.75rem] leading-tight sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 transition-all duration-1000 delay-100 px-4 ${
                 isVisible
                   ? "animate-fade-in-up"
                   : "opacity-0 transform translate-y-8"
@@ -142,7 +142,7 @@ export default function FAQ() {
                   : "opacity-0 transform translate-y-8"
               }`}
             >
-              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 lg:mb-8 leading-tight">
+              <h2 className="text-[1.75rem] leading-tight sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 lg:mb-8">
                 Pronto para organizar suas finanças?
               </h2>
 

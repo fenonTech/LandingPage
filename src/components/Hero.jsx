@@ -103,7 +103,7 @@ export default function Hero({ onOpenCreateAccount }) {
         </div>
       )}
 
-      <section className="bg-black relative overflow-hidden">
+      <section className="bg-black relative overflow-hidden sm:min-h-screen flex items-start sm:items-center justify-center">
         {/* Background elements */}
         <div className=" inset-0 pointer-events-none">
           {/* Floating card on the left - otimizado mobile */}
@@ -127,8 +127,8 @@ export default function Hero({ onOpenCreateAccount }) {
           </div>
         </div>
 
-        <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 relative z-10">
-          <div className="flex flex-col items-center justify-start text-center pt-12 pb-12 sm:pt-16 sm:pb-16">
+        <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 relative z-10 w-full">
+          <div className="flex flex-col items-center justify-start text-center pt-8 pb-32 sm:pt-8 sm:pb-16">
             {/* Main heading - otimizado mobile */}
             <h1 className="text-[1.75rem] leading-tight sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 sm:mb-5 max-w-4xl px-2">
               Seu assistente de IA

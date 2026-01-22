@@ -83,7 +83,7 @@ export default function Plans({ isRenewal = false }) {
 
           {/* Main heading */}
           <h1
-            className={`text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 leading-tight max-w-4xl transition-all duration-1000 delay-50 px-4 ${
+            className={`text-[1.75rem] leading-tight sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 max-w-4xl transition-all duration-1000 delay-50 px-4 ${
               isVisible
                 ? "animate-fade-in-up"
                 : "opacity-0 transform translate-y-8"

@@ -47,7 +47,7 @@ export default function Dashboard() {
               }`}
             >
               {/* Heading */}
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-4 leading-tight">
+              <h2 className="text-[1.75rem] leading-tight sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
                 Acompanhe suas{" "}
                 <span className="text-yellow-400">entradas e saídas</span> em
                 tempo real
