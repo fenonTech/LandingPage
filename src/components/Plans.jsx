@@ -73,22 +73,12 @@ function Plans({ isRenewal = false }) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-0">
         <div className="flex flex-col items-center justify-center min-h-screen text-center pt-16 pb-16 sm:pt-20 sm:pb-20">
           {/* Plans Badge */}
-          <div
-            className={`bg-yellow-400 text-black px-4 py-2 rounded-full font-bold text-sm mb-8 transition-all duration-700 ${
-              isVisible ? "animate-scale-in" : "opacity-0 transform scale-75"
-            }`}
-          >
+          <div className="bg-yellow-400 text-black px-4 py-2 rounded-full font-bold text-sm mb-8">
             {isRenewal ? "Renovar Plano" : "Planos e Preços"}
           </div>
 
           {/* Main heading */}
-          <h1
-            className={`text-[1.75rem] leading-tight sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 max-w-4xl transition-all duration-1000 delay-50 px-4 ${
-              isVisible
-                ? "animate-fade-in-up"
-                : "opacity-0 transform translate-y-8"
-            }`}
-          >
+          <h1 className="text-[1.75rem] leading-tight sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 max-w-4xl px-4">
             {isRenewal ? (
               <>
                 Renove seu <br className="sm:hidden" />
@@ -104,26 +94,14 @@ function Plans({ isRenewal = false }) {
           </h1>
 
           {/* Subtitle */}
-          <p
-            className={`text-base sm:text-lg text-gray-300 mb-12 leading-relaxed transition-all duration-1000 delay-100 px-4 ${
-              isVisible
-                ? "animate-fade-in-up"
-                : "opacity-0 transform translate-y-8"
-            }`}
-          >
+          <p className="text-base sm:text-lg text-gray-300 mb-12 leading-relaxed px-4">
             {isRenewal
               ? "Continue aproveitando todos os benefícios ou faça upgrade do seu plano"
               : "Selecione o plano ideal para organizar tudo que entra e sai do seu bolso"}
           </p>
 
           {/* Period Selector */}
-          <div
-            className={`flex items-center justify-center gap-2 mb-8 sm:mb-12 transition-all duration-1000 delay-150 ${
-              isVisible
-                ? "animate-fade-in-up"
-                : "opacity-0 transform translate-y-8"
-            }`}
-          >
+          <div className="flex items-center justify-center gap-2 mb-8 sm:mb-12">
             <button
               onClick={() => setSelectedPeriod("mensal")}
               className={`px-6 py-2 rounded-full font-bold text-sm transition-all duration-300 ${
@@ -171,11 +149,7 @@ function Plans({ isRenewal = false }) {
             {/* Plano Essencial */}
             <div
               ref={plan1Ref}
-              className={`rounded-2xl p-5 sm:p-6 border-2 border-white shadow-lg hover:shadow-xl hover-lift smooth-transition transition-all duration-1000 relative overflow-hidden flex flex-col ${
-                plan1Visible
-                  ? "animate-fade-in-up"
-                  : "opacity-0 transform translate-y-8"
-              }`}
+              className="rounded-2xl p-5 sm:p-6 border-2 border-white shadow-lg hover:shadow-xl hover-lift smooth-transition relative overflow-hidden flex flex-col"
               style={{ backgroundColor: "#161616" }}
               onMouseMove={(e) => handleMouseMove(e, "plan1")}
               onMouseLeave={handleMouseLeave}
@@ -288,11 +262,7 @@ function Plans({ isRenewal = false }) {
             {/* Plano Inteligente - Highlighted */}
             <div
               ref={plan2Ref}
-              className={`rounded-2xl p-5 sm:p-6 border-2 border-yellow-400 shadow-xl hover:shadow-2xl relative hover-lift smooth-transition transition-all duration-1000 overflow-hidden flex flex-col ${
-                plan2Visible
-                  ? "animate-scale-in"
-                  : "opacity-0 transform scale-90"
-              }`}
+              className="rounded-2xl p-5 sm:p-6 border-2 border-yellow-400 shadow-xl hover:shadow-2xl relative hover-lift smooth-transition overflow-hidden flex flex-col"
               style={{ backgroundColor: "#161616" }}
               onMouseMove={(e) => handleMouseMove(e, "plan2")}
               onMouseLeave={handleMouseLeave}
@@ -403,11 +373,7 @@ function Plans({ isRenewal = false }) {
             {/* Plano Visionário */}
             <div
               ref={plan3Ref}
-              className={`rounded-2xl p-5 sm:p-6 border-2 border-white shadow-lg hover:shadow-xl hover-lift smooth-transition transition-all duration-1000 relative overflow-hidden flex flex-col ${
-                plan3Visible
-                  ? "animate-fade-in-up"
-                  : "opacity-0 transform translate-y-8"
-              }`}
+              className="rounded-2xl p-5 sm:p-6 border-2 border-white shadow-lg hover:shadow-xl hover-lift smooth-transition relative overflow-hidden flex flex-col"
               style={{ backgroundColor: "#161616" }}
               onMouseMove={(e) => handleMouseMove(e, "plan3")}
               onMouseLeave={handleMouseLeave}

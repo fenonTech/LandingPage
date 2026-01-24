@@ -49,35 +49,19 @@ function FAQ() {
         <div className="mb-16 sm:mb-20">
           {/* FAQ Badge */}
           <div className="flex justify-center mb-6 sm:mb-8">
-            <div
-              className={`bg-yellow-400 text-black px-5 sm:px-6 py-2 rounded-full font-bold text-xs sm:text-sm transition-all duration-700 ${
-                isVisible ? "animate-scale-in" : "opacity-0 transform scale-75"
-              }`}
-            >
+            <div className="bg-yellow-400 text-black px-5 sm:px-6 py-2 rounded-full font-bold text-xs sm:text-sm">
               FAQ
             </div>
           </div>
 
           {/* Main heading */}
           <div className="text-center mb-10 sm:mb-12">
-            <h1
-              className={`text-[1.75rem] leading-tight sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 transition-all duration-1000 delay-100 px-4 ${
-                isVisible
-                  ? "animate-fade-in-up"
-                  : "opacity-0 transform translate-y-8"
-              }`}
-            >
+            <h1 className="text-[1.75rem] leading-tight sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 px-4">
               Descubra nossas
               <br />
               <span className="text-yellow-400">Perguntas Frequentes</span>
             </h1>
-            <p
-              className={`text-sm sm:text-lg text-gray-300 max-w-3xl mx-auto transition-all duration-1000 delay-200 px-4 leading-relaxed ${
-                isVisible
-                  ? "animate-fade-in-up"
-                  : "opacity-0 transform translate-y-8"
-              }`}
-            >
+            <p className="text-sm sm:text-lg text-gray-300 max-w-3xl mx-auto px-4 leading-relaxed">
               Encontre as respostas para as dúvidas mais comuns sobre o Meu
               Bolso
             </p>
@@ -88,12 +72,7 @@ function FAQ() {
             {faqs.map((faq, index) => (
               <div
                 key={index}
-                className={`bg-black rounded-xl border border-gray-800 overflow-hidden hover-lift smooth-transition transition-all duration-700 ${
-                  isVisible
-                    ? "animate-fade-in-up"
-                    : "opacity-0 transform translate-y-4"
-                }`}
-                style={{ animationDelay: `${600 + index * 100}ms` }}
+                className="bg-black rounded-xl border border-gray-800 overflow-hidden hover-lift smooth-transition"
               >
                 <button
                   className="w-full px-4 sm:px-6 py-3 sm:py-4 text-left flex items-center justify-between hover:bg-gray-900/30 smooth-transition active:bg-gray-900/50"

@@ -71,7 +71,7 @@ function Hero({ onOpenCreateAccount }) {
       {/* Modal de Sucesso */}
       {showSuccessModal && (
         <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 px-4">
-          <div className="bg-black rounded-2xl p-8 max-w-md w-full text-center animate-fade-in-up shadow-2xl border border-gray-800">
+          <div className="bg-black rounded-2xl p-8 max-w-md w-full text-center shadow-2xl border border-gray-800">
             <div className="mb-6">
               <div className="w-16 h-16 bg-yellow-400 rounded-full flex items-center justify-center mx-auto mb-4">
                 <span className="text-black text-3xl font-bold">✓</span>
@@ -107,7 +107,7 @@ function Hero({ onOpenCreateAccount }) {
         {/* Background elements */}
         <div className=" inset-0 pointer-events-none">
           {/* Floating card on the left - otimizado mobile */}
-          <div className="hidden sm:block absolute -left-8 sm:-left-6 md:-left-8 top-[2%] sm:top-1/2 transform -translate-y-1/ -rotate-12 animate-fade-in-left animate-float">
+          <div className="hidden sm:block absolute -left-8 sm:-left-6 md:-left-8 top-[2%] sm:top-1/2 transform -translate-y-1/ -rotate-12 animate-float">
             <img
               src="/landingpage/imgs/cartao.png"
               alt="Cartão Meu Bolso"
@@ -117,7 +117,7 @@ function Hero({ onOpenCreateAccount }) {
         </div>
 
         {/* Floating safe/vault on the right - otimizado mobile */}
-        <div className="hidden sm:block absolute -right-2 sm:-right-4 md:-right-10 bottom-[20%] sm:bottom-12 md:bottom-16 z-10 animate-fade-in-right animate-pulse-slow pointer-events-none">
+        <div className="hidden sm:block absolute -right-2 sm:-right-4 md:-right-10 bottom-[20%] sm:bottom-12 md:bottom-16 z-10 animate-pulse-slow pointer-events-none">
           <div className="relative">
             <img
               src="/landingpage/imgs/cofrepng.png"
@@ -203,7 +203,7 @@ function Hero({ onOpenCreateAccount }) {
                     </button>
                   </div>
                   {showError && (
-                    <p className="text-red-500 text-sm text-center animate-fade-in-up">
+                    <p className="text-red-500 text-sm text-center">
                       Por favor, insira um número de telefone válido
                     </p>
                   )}

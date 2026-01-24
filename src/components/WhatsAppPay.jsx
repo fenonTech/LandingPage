@@ -13,35 +13,19 @@ function WhatsAppPay() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20">
         <div className="flex flex-col items-center justify-start text-center pt-4 sm:pt-16 pb-16 sm:pb-20">
           {/* WhatsApp Badge */}
-          <div
-            className={`bg-yellow-400 text-black px-4 py-2 rounded-full font-bold text-sm mb-8 transition-all duration-700 ${
-              isVisible ? "animate-scale-in" : "opacity-0 transform scale-75"
-            }`}
-          >
+          <div className="bg-yellow-400 text-black px-4 py-2 rounded-full font-bold text-sm mb-8">
             WhatsApp
           </div>
 
           {/* Main heading */}
-          <h1
-            className={`text-[1.75rem] leading-tight sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 max-w-4xl transition-all duration-1000 delay-100 px-4 ${
-              isVisible
-                ? "animate-fade-in-up"
-                : "opacity-0 transform translate-y-8"
-            }`}
-          >
+          <h1 className="text-[1.75rem] leading-tight sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 max-w-4xl px-4">
             Bate-papo com seu Dinheiro
             <br />
             <span className="text-yellow-400">Diretamente pelo WhatsApp</span>
           </h1>
 
           {/* Subtitle */}
-          <p
-            className={`text-base sm:text-lg text-gray-300 mb-12 sm:mb-16 leading-relaxed max-w-2xl transition-all duration-1000 delay-200 px-4 ${
-              isVisible
-                ? "animate-fade-in-up"
-                : "opacity-0 transform translate-y-8"
-            }`}
-          >
+          <p className="text-base sm:text-lg text-gray-300 mb-12 sm:mb-16 leading-relaxed max-w-2xl px-4">
             O Meu Bolso te dá aquela ajuda sincera pra você organizar as
             <span className="hidden sm:inline">
               <br />
@@ -51,11 +35,7 @@ function WhatsAppPay() {
           </p>
 
           {/* Phone with yellow background */}
-          <div
-            className={`relative transition-all duration-1200 delay-200 ${
-              isVisible ? "animate-scale-in" : "opacity-0 transform scale-75"
-            }`}
-          >
+          <div className="relative">
             {/* Yellow background rectangle */}
             <div className="bg-yellow-400 rounded-2xl sm:rounded-3xl w-80 sm:w-96 lg:w-[500px] h-48 sm:h-64 lg:h-80 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-0"></div>
 
