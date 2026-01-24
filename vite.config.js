@@ -14,8 +14,8 @@ export default defineConfig({
         // Adiciona hash aos arquivos para cache busting
         entryFileNames: `assets/[name].[hash].js`,
         chunkFileNames: `assets/[name].[hash].js`,
-        assetFileNames: `assets/[name].[hash].[ext]`
-      }
+        assetFileNames: `assets/[name].[hash].[ext]`,
+      },
     },
     // Otimizações para produção (usando esbuild que é mais rápido)
     minify: "esbuild",
