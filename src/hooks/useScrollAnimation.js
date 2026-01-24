@@ -1,41 +1,24 @@
 import { useEffect, useRef, useState } from "react";
 
-// Gera um ID único para cada elemento baseado em sua posição na página
-const generateElementId = (element) => {
+// Map para rastrear elementos já animados (persiste durante a sessão)
+const animatedElementsMap = new Map();
+
+// Contador global para gerar IDs únicos
+let globalIdCounter = 0;
+
+// Gera um ID único e estável para cada elemento
+const getOrCreateElementId = (element) => {
   if (!element) return null;
 
-  // Usa o id do elemento se existir
+  // Tenta usar o ID do elemento se existir
   if (element.id) return `elem-${element.id}`;
 
-  // Usa uma combinação de tag, classes e posição como identificador único
-  const tagName = element.tagName;
-  const className = element.className || "";
-  const siblings = element.parentElement
-    ? Array.from(element.parentElement.children)
-    : [];
-  const index = siblings.indexOf(element);
-
-  return `elem-${tagName}-${className.substring(0, 20)}-${index}`;
-};
-
-// Verifica se um elemento já foi animado (persiste no sessionStorage)
-const hasBeenAnimated = (elementId) => {
-  if (!elementId) return false;
-  try {
-    return sessionStorage.getItem(`animated-${elementId}`) === "true";
-  } catch {
-    return false;
+  // Verifica se já geramos um ID para este elemento
+  if (!element.dataset.animId) {
+    element.dataset.animId = `anim-${globalIdCounter++}`;
   }
-};
 
-// Marca um elemento como animado (persiste no sessionStorage)
-const markAsAnimated = (elementId) => {
-  if (!elementId) return;
-  try {
-    sessionStorage.setItem(`animated-${elementId}`, "true");
-  } catch {
-    // Ignora erros de storage (modo privado, etc)
-  }
+  return element.dataset.animId;
 };
 
 export const useScrollAnimation = (threshold = 0.1) => {
@@ -50,21 +33,19 @@ export const useScrollAnimation = (threshold = 0.1) => {
     const element = ref.current;
     if (!element) return;
 
-    // Gera ID do elemento apenas uma vez
+    // Gera ou recupera ID único do elemento
     if (!elementIdRef.current) {
-      elementIdRef.current = generateElementId(element);
+      elementIdRef.current = getOrCreateElementId(element);
     }
 
     const elementId = elementIdRef.current;
 
     // Verifica se já foi animado anteriormente
-    const alreadyAnimated = hasBeenAnimated(elementId);
+    const alreadyAnimated = animatedElementsMap.get(elementId);
 
     if (alreadyAnimated || hasAnimatedRef.current) {
       // Força visibilidade imediata e adiciona classes permanentes
-      if (!isVisible) {
-        setIsVisible(true);
-      }
+      setIsVisible(true);
       element.classList.add("animated-once");
       element.style.opacity = "1";
       element.style.transform = "none";
@@ -80,8 +61,8 @@ export const useScrollAnimation = (threshold = 0.1) => {
           hasAnimatedRef.current = true;
           setIsVisible(true);
 
-          // Marca como animado no storage
-          markAsAnimated(elementId);
+          // Marca como animado
+          animatedElementsMap.set(elementId, true);
 
           // Adiciona classes permanentes após a animação
           requestAnimationFrame(() => {
@@ -90,7 +71,7 @@ export const useScrollAnimation = (threshold = 0.1) => {
             setTimeout(() => {
               element.style.opacity = "1";
               element.style.transform = "none";
-            }, 700); // Aguarda a duração da animação
+            }, 700);
           });
 
           // Desconecta o observer
@@ -132,21 +113,19 @@ export const useStaggeredAnimation = (delay = 100) => {
     const element = ref.current;
     if (!element) return;
 
-    // Gera ID do elemento apenas uma vez
+    // Gera ou recupera ID único do elemento
     if (!elementIdRef.current) {
-      elementIdRef.current = generateElementId(element);
+      elementIdRef.current = getOrCreateElementId(element);
     }
 
     const elementId = elementIdRef.current;
 
     // Verifica se já foi animado anteriormente
-    const alreadyAnimated = hasBeenAnimated(elementId);
+    const alreadyAnimated = animatedElementsMap.get(elementId);
 
     if (alreadyAnimated || hasAnimatedRef.current) {
       // Força visibilidade imediata e adiciona classes permanentes
-      if (!isVisible) {
-        setIsVisible(true);
-      }
+      setIsVisible(true);
       element.classList.add("animated-once");
       element.style.opacity = "1";
       element.style.transform = "none";
@@ -164,8 +143,8 @@ export const useStaggeredAnimation = (delay = 100) => {
           timeoutRef.current = setTimeout(() => {
             setIsVisible(true);
 
-            // Marca como animado no storage
-            markAsAnimated(elementId);
+            // Marca como animado
+            animatedElementsMap.set(elementId, true);
 
             // Adiciona classes permanentes após a animação
             requestAnimationFrame(() => {
