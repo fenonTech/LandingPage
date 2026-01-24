@@ -3,16 +3,18 @@ import { useEffect, useRef, useState } from "react";
 // Gera um ID único para cada elemento baseado em sua posição na página
 const generateElementId = (element) => {
   if (!element) return null;
-  
+
   // Usa o id do elemento se existir
   if (element.id) return `elem-${element.id}`;
-  
+
   // Usa uma combinação de tag, classes e posição como identificador único
   const tagName = element.tagName;
-  const className = element.className || '';
-  const siblings = element.parentElement ? Array.from(element.parentElement.children) : [];
+  const className = element.className || "";
+  const siblings = element.parentElement
+    ? Array.from(element.parentElement.children)
+    : [];
   const index = siblings.indexOf(element);
-  
+
   return `elem-${tagName}-${className.substring(0, 20)}-${index}`;
 };
 
@@ -20,7 +22,7 @@ const generateElementId = (element) => {
 const hasBeenAnimated = (elementId) => {
   if (!elementId) return false;
   try {
-    return sessionStorage.getItem(`animated-${elementId}`) === 'true';
+    return sessionStorage.getItem(`animated-${elementId}`) === "true";
   } catch {
     return false;
   }
@@ -30,7 +32,7 @@ const hasBeenAnimated = (elementId) => {
 const markAsAnimated = (elementId) => {
   if (!elementId) return;
   try {
-    sessionStorage.setItem(`animated-${elementId}`, 'true');
+    sessionStorage.setItem(`animated-${elementId}`, "true");
   } catch {
     // Ignora erros de storage (modo privado, etc)
   }
@@ -41,7 +43,7 @@ export const useScrollAnimation = (threshold = 0.1) => {
   const elementIdRef = useRef(null);
   const hasAnimatedRef = useRef(false);
   const observerRef = useRef(null);
-  
+
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -57,15 +59,15 @@ export const useScrollAnimation = (threshold = 0.1) => {
 
     // Verifica se já foi animado anteriormente
     const alreadyAnimated = hasBeenAnimated(elementId);
-    
+
     if (alreadyAnimated || hasAnimatedRef.current) {
       // Força visibilidade imediata e adiciona classes permanentes
       if (!isVisible) {
         setIsVisible(true);
       }
       element.classList.add("animated-once");
-      element.style.opacity = '1';
-      element.style.transform = 'none';
+      element.style.opacity = "1";
+      element.style.transform = "none";
       return;
     }
 
@@ -77,20 +79,20 @@ export const useScrollAnimation = (threshold = 0.1) => {
         if (entry.isIntersecting && !hasAnimatedRef.current) {
           hasAnimatedRef.current = true;
           setIsVisible(true);
-          
+
           // Marca como animado no storage
           markAsAnimated(elementId);
-          
+
           // Adiciona classes permanentes após a animação
           requestAnimationFrame(() => {
             element.classList.add("animated-once");
             // Garante que o estado final seja aplicado
             setTimeout(() => {
-              element.style.opacity = '1';
-              element.style.transform = 'none';
+              element.style.opacity = "1";
+              element.style.transform = "none";
             }, 700); // Aguarda a duração da animação
           });
-          
+
           // Desconecta o observer
           if (observerRef.current) {
             observerRef.current.disconnect();
@@ -123,7 +125,7 @@ export const useStaggeredAnimation = (delay = 100) => {
   const hasAnimatedRef = useRef(false);
   const observerRef = useRef(null);
   const timeoutRef = useRef(null);
-  
+
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -139,15 +141,15 @@ export const useStaggeredAnimation = (delay = 100) => {
 
     // Verifica se já foi animado anteriormente
     const alreadyAnimated = hasBeenAnimated(elementId);
-    
+
     if (alreadyAnimated || hasAnimatedRef.current) {
       // Força visibilidade imediata e adiciona classes permanentes
       if (!isVisible) {
         setIsVisible(true);
       }
       element.classList.add("animated-once");
-      element.style.opacity = '1';
-      element.style.transform = 'none';
+      element.style.opacity = "1";
+      element.style.transform = "none";
       return;
     }
 
@@ -158,23 +160,23 @@ export const useStaggeredAnimation = (delay = 100) => {
       ([entry]) => {
         if (entry.isIntersecting && !hasAnimatedRef.current) {
           hasAnimatedRef.current = true;
-          
+
           timeoutRef.current = setTimeout(() => {
             setIsVisible(true);
-            
+
             // Marca como animado no storage
             markAsAnimated(elementId);
-            
+
             // Adiciona classes permanentes após a animação
             requestAnimationFrame(() => {
               element.classList.add("animated-once");
               // Garante que o estado final seja aplicado
               setTimeout(() => {
-                element.style.opacity = '1';
-                element.style.transform = 'none';
+                element.style.opacity = "1";
+                element.style.transform = "none";
               }, 700); // Aguarda a duração da animação
             });
-            
+
             // Desconecta o observer
             if (observerRef.current) {
               observerRef.current.disconnect();

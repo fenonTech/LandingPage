@@ -178,7 +178,7 @@ function Hero({ onOpenCreateAccount }) {
             </div>
 
             {/* Trial Section - otimizado mobile */}
-            <div className="w-full max-w-3xl mb-3 sm:mb-5 px-4">
+            <div className="w-full max-w-3xl mb-8 sm:mb-10 px-4">
               <h3 className="text-lg sm:text-2xl font-bold text-white mb-4 sm:mb-5 text-center">
                 Resgate seu período de teste
               </h3>

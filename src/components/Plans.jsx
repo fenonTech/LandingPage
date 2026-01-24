@@ -239,9 +239,9 @@ function Plans({ isRenewal = false }) {
                   </div>
                   Dashboard básico
                 </li>
-                <li className="flex items-center text-gray-300">
-                  <div className="w-5 h-5 bg-green-500 rounded-full flex items-center justify-center mr-3 flex-shrink-0">
-                    <span className="text-white text-xs font-bold">✓</span>
+                <li className="flex items-center text-gray-500">
+                  <div className="w-5 h-5 bg-gray-700 rounded-full flex items-center justify-center mr-3 flex-shrink-0">
+                    <span className="text-gray-500 text-xs font-bold">✗</span>
                   </div>
                   Relatórios mensais
                 </li>
@@ -249,19 +249,19 @@ function Plans({ isRenewal = false }) {
                   <div className="w-5 h-5 bg-gray-700 rounded-full flex items-center justify-center mr-3 flex-shrink-0">
                     <span className="text-gray-500 text-xs font-bold">✗</span>
                   </div>
-                  Análise avançada com IA
+                  Relatório simples com IA
                 </li>
                 <li className="flex items-center text-gray-500">
                   <div className="w-5 h-5 bg-gray-700 rounded-full flex items-center justify-center mr-3 flex-shrink-0">
                     <span className="text-gray-500 text-xs font-bold">✗</span>
                   </div>
-                  Planejamento de gastos
+                  Transações futuras
                 </li>
                 <li className="flex items-center text-gray-500">
                   <div className="w-5 h-5 bg-gray-700 rounded-full flex items-center justify-center mr-3 flex-shrink-0">
                     <span className="text-gray-500 text-xs font-bold">✗</span>
                   </div>
-                  Alertas personalizados
+                  Lembretes de gastos
                 </li>
                 <li className="flex items-center text-gray-500">
                   <div className="w-5 h-5 bg-gray-700 rounded-full flex items-center justify-center mr-3 flex-shrink-0">
@@ -358,19 +358,19 @@ function Plans({ isRenewal = false }) {
                   <div className="w-5 h-5 bg-green-500 rounded-full flex items-center justify-center mr-3 flex-shrink-0">
                     <span className="text-white text-xs font-bold">✓</span>
                   </div>
-                  Análise avançada com IA
+                  Relatório simples com IA
                 </li>
                 <li className="flex items-center text-gray-300">
                   <div className="w-5 h-5 bg-green-500 rounded-full flex items-center justify-center mr-3 flex-shrink-0">
                     <span className="text-white text-xs font-bold">✓</span>
                   </div>
-                  Planejamento de gastos
+                  Transações futuras
                 </li>
                 <li className="flex items-center text-gray-300">
                   <div className="w-5 h-5 bg-green-500 rounded-full flex items-center justify-center mr-3 flex-shrink-0">
                     <span className="text-white text-xs font-bold">✓</span>
                   </div>
-                  Alertas personalizados
+                  Lembretes de gastos
                 </li>
                 <li className="flex items-center text-gray-500">
                   <div className="w-5 h-5 bg-gray-700 rounded-full flex items-center justify-center mr-3 flex-shrink-0">

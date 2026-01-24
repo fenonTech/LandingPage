@@ -95,6 +95,32 @@ function Login({
     }
   };
 
+  const handleCodePaste = (e) => {
+    e.preventDefault();
+    const pastedData = e.clipboardData.getData("text").replace(/\s/g, ""); // Remove espaços
+    
+    // Verifica se é alfanumérico
+    if (!/^[a-zA-Z0-9]+$/.test(pastedData)) return;
+    
+    // Pega os primeiros 6 caracteres
+    const chars = pastedData.slice(0, 6).toLowerCase().split("");
+    
+    // Preenche os campos
+    const newCode = [...code];
+    chars.forEach((char, index) => {
+      if (index < 6) {
+        newCode[index] = char;
+      }
+    });
+    setCode(newCode);
+    
+    // Foca no próximo campo vazio ou no último se todos foram preenchidos
+    const nextEmptyIndex = newCode.findIndex((digit) => !digit);
+    const focusIndex = nextEmptyIndex !== -1 ? nextEmptyIndex : 5;
+    const inputToFocus = document.getElementById(`code-${focusIndex}`);
+    if (inputToFocus) inputToFocus.focus();
+  };
+
   const handleCodeSubmit = async (e) => {
     e.preventDefault();
     const fullCode = code.join("").toLowerCase();
@@ -294,11 +320,13 @@ function Login({
                       key={index}
                       id={`code-${index}`}
                       type="text"
-                      inputMode="text"
+                      inputMode="numeric"
+                      pattern="[0-9]*"
                       maxLength="1"
                       value={digit}
                       onChange={(e) => handleCodeChange(index, e.target.value)}
                       onKeyDown={(e) => handleCodeKeyDown(index, e)}
+                      onPaste={handleCodePaste}
                       className="w-12 h-12 sm:w-14 sm:h-14 bg-gray-900 border-2 border-gray-800 rounded-lg text-center text-xl sm:text-2xl font-bold text-gray-300 focus:outline-none focus:border-yellow-400 transition-colors lowercase"
                     />
                   ))}

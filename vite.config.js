@@ -12,11 +12,11 @@ export default defineConfig({
       },
     },
     // Otimizações para produção
-    minify: 'terser',
+    minify: "terser",
     terserOptions: {
       compress: {
         drop_console: false,
-        pure_funcs: ['console.log'],
+        pure_funcs: ["console.log"],
       },
     },
     // Melhora code splitting
@@ -25,6 +25,6 @@ export default defineConfig({
   },
   // Otimizações de performance
   esbuild: {
-    logOverride: { 'this-is-undefined-in-esm': 'silent' }
+    logOverride: { "this-is-undefined-in-esm": "silent" },
   },
 });
