@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { Routes, Route, useNavigate, Navigate } from "react-router-dom";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
@@ -52,28 +52,28 @@ function App() {
   }, []);
 
   // Função para voltar ao topo
-  const scrollToTop = () => {
+  const scrollToTop = useCallback(() => {
     window.scrollTo({
       top: 0,
       behavior: "smooth",
     });
-  };
+  }, []);
 
-  const handleOpenCreateAccount = () => {
+  const handleOpenCreateAccount = useCallback(() => {
     navigate("/criar-conta");
-  };
+  }, [navigate]);
 
-  const handleOpenLogin = () => {
+  const handleOpenLogin = useCallback(() => {
     navigate("/login");
-  };
+  }, [navigate]);
 
-  const handleOpenForgotPassword = () => {
+  const handleOpenForgotPassword = useCallback(() => {
     navigate("/esqueci-senha");
-  };
+  }, [navigate]);
 
-  const handleGoBack = () => {
+  const handleGoBack = useCallback(() => {
     navigate("/");
-  };
+  }, [navigate]);
 
   // Componente da página principal
   const MainPage = () => (
