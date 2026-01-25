@@ -112,7 +112,7 @@ function Hero({ onOpenCreateAccount }) {
         {/* Background elements */}
         <div className=" inset-0 pointer-events-none">
           {/* Floating card on the left - otimizado mobile */}
-          <div className="hidden sm:block absolute -left-8 sm:-left-6 md:-left-8 top-[2%] sm:top-1/2 transform -translate-y-1/ -rotate-12 animate-float">
+          <div className="hidden sm:block absolute -left-8 sm:-left-6 md:-left-8 top-[2%] sm:top-1/2 -rotate-12">
             <img
               src={cartaoImg}
               alt="Cartão Meu Bolso"
@@ -122,7 +122,7 @@ function Hero({ onOpenCreateAccount }) {
         </div>
 
         {/* Floating safe/vault on the right - otimizado mobile */}
-        <div className="hidden sm:block absolute -right-2 sm:-right-4 md:-right-10 bottom-[20%] sm:bottom-12 md:bottom-16 z-10 animate-pulse-slow pointer-events-none">
+        <div className="hidden sm:block absolute -right-2 sm:-right-4 md:-right-10 bottom-[20%] sm:bottom-12 md:bottom-16 z-10 pointer-events-none">
           <div className="relative">
             <img
               src={cofreImg}
