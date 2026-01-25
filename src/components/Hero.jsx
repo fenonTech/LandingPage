@@ -1,4 +1,9 @@
 import { useState, memo } from "react";
+import cartaoImg from "../imgs/cartao.png";
+import cofreImg from "../imgs/cofrepng.png";
+import instagramImg from "../imgs/instagram.png";
+import whatsappImg from "../imgs/whatsapp.png";
+import relogioImg from "../imgs/relogio.png";
 
 function Hero({ onOpenCreateAccount }) {
   const [telefone, setTelefone] = useState("");
@@ -109,7 +114,7 @@ function Hero({ onOpenCreateAccount }) {
           {/* Floating card on the left - otimizado mobile */}
           <div className="hidden sm:block absolute -left-8 sm:-left-6 md:-left-8 top-[2%] sm:top-1/2 transform -translate-y-1/ -rotate-12 animate-float">
             <img
-              src="/landingpage/imgs/cartao.png"
+              src={cartaoImg}
               alt="Cartão Meu Bolso"
               className="w-48 md:w-64 lg:w-84 shadow-2xl rounded-2xl"
             />
@@ -120,7 +125,7 @@ function Hero({ onOpenCreateAccount }) {
         <div className="hidden sm:block absolute -right-2 sm:-right-4 md:-right-10 bottom-[20%] sm:bottom-12 md:bottom-16 z-10 animate-pulse-slow pointer-events-none">
           <div className="relative">
             <img
-              src="/landingpage/imgs/cofrepng.png"
+              src={cofreImg}
               alt="Cofre"
               className="w-48 md:w-64 md:h-70 lg:w-84 lg:h-84"
             />
@@ -152,7 +157,7 @@ function Hero({ onOpenCreateAccount }) {
                 className="flex items-center text-pink-500 hover:text-pink-400 smooth-transition hover-lift active:scale-95"
               >
                 <img
-                  src={"/landingpage/imgs/instagram.png"}
+                  src={instagramImg}
                   alt="Instagram"
                   className="w-5 h-5 sm:w-6 sm:h-6 mr-2"
                 />
@@ -167,7 +172,7 @@ function Hero({ onOpenCreateAccount }) {
                 className="flex items-center text-green-500 hover:text-green-400 smooth-transition hover-lift active:scale-95"
               >
                 <img
-                  src={"/landingpage/imgs/whatsapp.png"}
+                  src={whatsappImg}
                   alt="WhatsApp"
                   className="w-5 h-5 sm:w-6 sm:h-6 mr-2"
                 />
@@ -219,7 +224,7 @@ function Hero({ onOpenCreateAccount }) {
                 style={{ animationDelay: "0.8s" }}
               >
                 <img
-                  src={"/landingpage/imgs/relogio.png"}
+                  src={relogioImg}
                   alt="Relógio"
                   className="w-4 h-4 sm:w-5 sm:h-5 mr-2 flex-shrink-0 brightness-0"
                 />

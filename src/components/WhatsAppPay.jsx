@@ -1,5 +1,6 @@
 import { memo } from "react";
 import { useScrollAnimation } from "../hooks/useScrollAnimation";
+import celularImg from "../imgs/celular.png";
 
 function WhatsAppPay() {
   const [sectionRef, isVisible] = useScrollAnimation(0.2);
@@ -42,7 +43,7 @@ function WhatsAppPay() {
             {/* Phone image */}
             <div className="relative z-10 transform rotate-12 animate-float">
               <img
-                src={"/landingpage/imgs/celular.png"}
+                src={celularImg}
                 alt="Celular com WhatsApp"
                 className="w-64 sm:w-80 lg:w-96 h-auto"
               />

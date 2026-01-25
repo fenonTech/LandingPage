@@ -1,5 +1,6 @@
 import { useState, memo } from "react";
 import { useScrollAnimation } from "../hooks/useScrollAnimation";
+import relogioImg from "../imgs/relogio.png";
 
 function FAQ() {
   const [openIndex, setOpenIndex] = useState(4); // Question about plan differences open by default
@@ -130,7 +131,7 @@ function FAQ() {
                 className="bg-yellow-400 hover:bg-yellow-300 text-black px-6 sm:px-8 py-3 sm:py-3 rounded-full font-bold text-sm sm:text-base smooth-transition hover-lift inline-flex items-center active:scale-95 shadow-lg hover:shadow-xl justify-center"
               >
                 <img
-                  src={"/landingpage/imgs/relogio.png"}
+                  src={relogioImg}
                   alt="Relógio"
                   className="w-4 h-4 sm:w-5 sm:h-5 mr-2 flex-shrink-0 brightness-0"
                 />

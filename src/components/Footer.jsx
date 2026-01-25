@@ -1,4 +1,7 @@
 import { memo } from "react";
+import logoHeader from "../imgs/logoHeader.png";
+import whatsappImg from "../imgs/whatsapp.png";
+import instagramImg from "../imgs/instagram.png";
 
 function Footer() {
   return (
@@ -8,7 +11,7 @@ function Footer() {
           {/* Logo and Description */}
           <div className="sm:col-span-2 md:col-span-2">
             <img
-              src={"/landingpage/imgs/logoHeader.png"}
+              src={logoHeader}
               alt="Meu Bolso"
               className="h-8 w-auto mb-4"
             />
@@ -71,7 +74,7 @@ function Footer() {
                   className="text-gray-400 hover:text-white transition-colors text-sm active:text-yellow-400 flex items-center gap-2"
                 >
                   <img
-                    src={"/landingpage/imgs/whatsapp.png"}
+                    src={whatsappImg}
                     alt="WhatsApp"
                     className="w-5 h-5"
                   />
@@ -95,7 +98,7 @@ function Footer() {
                   className="text-gray-400 hover:text-white transition-colors text-sm active:text-yellow-400 flex items-center gap-2"
                 >
                   <img
-                    src={"/landingpage/imgs/instagram.png"}
+                    src={instagramImg}
                     alt="Instagram"
                     className="w-5 h-5"
                   />

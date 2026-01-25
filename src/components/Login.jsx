@@ -1,4 +1,6 @@
 import { useState } from "react";
+import logoHeader from "../imgs/logoHeader.png";
+import celularImg from "../imgs/celular.png";
 
 function Login({
   isVisible,
@@ -205,7 +207,7 @@ function Login({
         className="absolute top-4 left-4 flex items-center z-10 hover:opacity-80 transition-opacity cursor-pointer"
       >
         <img
-          src={"/landingpage/imgs/logoHeader.png"}
+          src={logoHeader}
           alt="MEU BOLSO"
           className="h-7 sm:h-10 w-auto"
         />
@@ -410,7 +412,7 @@ function Login({
         {/* Phone with WhatsApp */}
         <div className="relative z-10 transform rotate-12 animate-float mb-8">
           <img
-            src={"/landingpage/imgs/celular.png"}
+            src={celularImg}
             alt="WhatsApp Meu Bolso"
             className="w-96 h-auto drop-shadow-2xl"
           />

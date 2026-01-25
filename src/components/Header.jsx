@@ -1,4 +1,5 @@
 import { memo } from "react";
+import logoHeader from "../imgs/logoHeader.png";
 
 function Header({ onOpenCreateAccount, onOpenLogin }) {
   const scrollToTop = () => {
@@ -17,7 +18,7 @@ function Header({ onOpenCreateAccount, onOpenLogin }) {
             className="flex items-center cursor-pointer hover:opacity-80 transition-opacity active:scale-95"
           >
             <img
-              src={"/landingpage/imgs/logoHeader.png"}
+              src={logoHeader}
               alt="MEU BOLSO"
               className="h-8 sm:h-10 w-auto"
             />

@@ -1,5 +1,6 @@
 import { memo } from "react";
 import { useScrollAnimation } from "../hooks/useScrollAnimation";
+import dashboardImg from "../imgs/dashboard.png";
 
 function Dashboard() {
   const [sectionRef, isVisible] = useScrollAnimation(0.2);
@@ -22,7 +23,7 @@ function Dashboard() {
             {/* Dashboard Image - Left Side (2 columns) */}
             <div className="lg:col-span-2">
               <img
-                src="/landingpage/imgs/dashboard.png"
+                src={dashboardImg}
                 alt="Dashboard Financeiro"
                 className="w-full rounded-xl sm:rounded-2xl shadow-2xl"
                 style={{ height: "350px", objectFit: "contain" }}
