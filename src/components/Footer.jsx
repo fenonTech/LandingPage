@@ -10,11 +10,7 @@ function Footer() {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-8 sm:gap-8 mb-10 sm:mb-12">
           {/* Logo and Description */}
           <div className="sm:col-span-2 md:col-span-2">
-            <img
-              src={logoHeader}
-              alt="Meu Bolso"
-              className="h-8 w-auto mb-4"
-            />
+            <img src={logoHeader} alt="Meu Bolso" className="h-8 w-auto mb-4" />
             <p className="text-gray-400 text-sm sm:text-base mb-6 max-w-md leading-relaxed">
               Controle seu dinheiro de forma simples e inteligente. Comece agora
               e transforme sua relação com as finanças.
@@ -73,11 +69,7 @@ function Footer() {
                   rel="noopener noreferrer"
                   className="text-gray-400 hover:text-white transition-colors text-sm active:text-yellow-400 flex items-center gap-2"
                 >
-                  <img
-                    src={whatsappImg}
-                    alt="WhatsApp"
-                    className="w-5 h-5"
-                  />
+                  <img src={whatsappImg} alt="WhatsApp" className="w-5 h-5" />
                   WhatsApp
                 </a>
               </li>
@@ -97,11 +89,7 @@ function Footer() {
                   rel="noopener noreferrer"
                   className="text-gray-400 hover:text-white transition-colors text-sm active:text-yellow-400 flex items-center gap-2"
                 >
-                  <img
-                    src={instagramImg}
-                    alt="Instagram"
-                    className="w-5 h-5"
-                  />
+                  <img src={instagramImg} alt="Instagram" className="w-5 h-5" />
                   Instagram
                 </a>
               </li>

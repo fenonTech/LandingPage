@@ -81,11 +81,7 @@ function CreateAccount({ isVisible, onClose, onSwitchToLogin }) {
         onClick={onClose}
         className="absolute top-4 left-4 flex items-center z-10 hover:opacity-80 transition-opacity cursor-pointer"
       >
-        <img
-          src={logoHeader}
-          alt="MEU BOLSO"
-          className="h-7 sm:h-10 w-auto"
-        />
+        <img src={logoHeader} alt="MEU BOLSO" className="h-7 sm:h-10 w-auto" />
         <span className="ml-2 sm:ml-3 text-yellow-400 text-sm sm:text-xl font-bold">
           MEU BOLSO
         </span>
